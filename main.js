@@ -50,13 +50,18 @@ form.addEventListener('submit', (e) => {
     input.value = ''
 
     editBtn.addEventListener('click', () => {
-        if(editBtn.innerText.toLowerCase === 'Edit'){
+        if(editBtn.innerText.toLowerCase() === 'edit'){
         taskInput.removeAttribute('readonly')
         taskInput.focus()
         editBtn.innerText = 'Save'
         } else{
-            taskInput.setAttribute('readonly')
+            taskInput.setAttribute('readonly', 'readonly')
+            editBtn.innerText = 'Edit'
         }
+    })
+
+    deleteBtn.addEventListener('click', () => {
+        list.removeChild(newTask)
     })
 
 
